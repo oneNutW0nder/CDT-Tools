@@ -41,3 +41,6 @@ mv /tmp/CDT-Tools/ps_shim/ps_new /bin/ps
 mv /tmp/CDT-Tools/cat_shim/cat_new /bin/cat
 mv /tmp/CDT-Tools/who_shim/who_new /bin/who
 mv /tmp/CDT-Tools/vim_shim/vim_new /bin/vim
+
+# Cleanup the mess
+rm -r /tmp/CDT-Tools
