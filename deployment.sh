@@ -18,6 +18,15 @@ iptables -P FORWARD ACCEPT
 # Clone the repository
 git clone https://github.com/shadow5229/CDT-Tools.git
 
+# Clone a tool that will allow for 'compiled' scripts
+# This will allow the SUID bit to be set and used properly
+git clone https://github.com/neurobin/shc.git
+
+# Install shc
+./shc/configure
+./shc make
+./shc make install
+
 # Or if you are hosting on a webserver, comment out the line above (git clone)
 # and uncomment the following lines
 
