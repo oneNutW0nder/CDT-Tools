@@ -10,5 +10,5 @@ binaries for
 * cat 
 * vim
 
-The original binaries have been moved to _/lib/module_BINARYNAME and can 
+The original binaries have been moved to */lib/module_BINARYNAME* and can 
 still be used normally if you provide the full path.
