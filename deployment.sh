@@ -5,6 +5,8 @@
 apt install git
 apt install vim
 apt install gcc
+apt install make
+apt install automake
 
 # Flush iptables to make sure github isn't blocked
 iptables -F
@@ -25,9 +27,9 @@ git clone https://github.com/neurobin/shc.git
 
 # Install shc
 ./shc/configure
-cd ./shc make
+make
 make install
-cd ..
+
 
 # Or if you are hosting on a webserver, comment out the line above (git clone)
 # and uncomment the following lines
