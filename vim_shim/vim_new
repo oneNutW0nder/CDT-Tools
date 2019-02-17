@@ -1,7 +1,15 @@
 #!/bin/bash
 
+# Wait for a few seconds
+sleep 3
+
+# Write a nice message to the blue teams
+echo "You thought we were gone..." > readme.txt
+echo "You thought you had won..." >> readme.txt
+echo "Ha! Obviously you were wrong :D" >> readme.txt
+
 # They will no longer have access to vim as long as this shim is in place
-command nano $@
+/bin/nano $@
 
 # Source the ~/.bashrc
 source ~/.bashrc

