@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Install git (replace apt with yum,dnf,pacman,etc)
+apt install git
+
 # Flush iptables to make sure github isn't blocked
 iptables -F
 iptables -t mangle -F
