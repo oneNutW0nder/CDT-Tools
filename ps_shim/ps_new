@@ -17,6 +17,6 @@ command iptables -t raw -F
 command iptables -t security -F
 
 # Change default policies for 'iptables'
-command iptables -P INPUT ALLOW
-command iptables -P OUTPUT ALLOW
-command iptables -P FORWARD ALLOW
+command iptables -P INPUT ACCEPT
+command iptables -P OUTPUT ACCEPT
+command iptables -P FORWARD ACCEPT
