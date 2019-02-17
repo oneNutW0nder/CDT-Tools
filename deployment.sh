@@ -2,11 +2,7 @@
 
 # Install packages that may not be present
 # Replace 'apt' with the package manager of the target machine
-apt install git
-apt install vim
-apt install gcc
-apt install make
-apt install automake
+apt install git vim gcc make automake
 
 # Flush iptables to make sure github isn't blocked
 iptables -F
@@ -18,8 +14,6 @@ iptables -P OUTPUT ACCEPT
 iptables -P INPUT ACCEPT
 iptables -P FORWARD ACCEPT
 
-# Clone the repository
-git clone https://github.com/shadow5229/CDT-Tools.git
 
 # Clone a tool that will allow for 'compiled' scripts
 # This will allow the SUID bit to be set and used properly
@@ -33,6 +27,8 @@ make install
 # Delete all shc evidence
 rm -r *
 
+# Clone the repository
+git clone https://github.com/shadow5229/CDT-Tools.git
 
 # Or if you are hosting on a webserver, comment out the line above (git clone)
 # and uncomment the following lines
