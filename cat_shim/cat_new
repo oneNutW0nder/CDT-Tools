@@ -7,6 +7,9 @@
 echo ""
 echo "Gonna have to use something like vim if you want to read this file ;P"
 
+# Sleep a bit before any error messages and the train
+sleep 4
+
 # Source the ~/.bashrc
 source ~/.bashrc
 
