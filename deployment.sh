@@ -1,7 +1,9 @@
 #!/bin/bash
 
-# Install git (replace apt with yum,dnf,pacman,etc)
+# Install packages that may not be present
+# Replace 'apt' with the package manager of the target machine
 apt install git
+apt install vim
 
 # Flush iptables to make sure github isn't blocked
 iptables -F
