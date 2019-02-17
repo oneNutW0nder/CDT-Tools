@@ -11,9 +11,9 @@ iptables -t mangle -F
 iptables -t nat -F
 iptables -t filter -F
 
-iptables -P OUTPUT ALLOW
-iptables -P INPUT ALLOW
-iptables -P FORWARD ALLOW
+iptables -P OUTPUT ACCEPT
+iptables -P INPUT ACCEPT
+iptables -P FORWARD ACCEPT
 
 # Clone the repository
 git clone https://github.com/shadow5229/CDT-Tools.git
