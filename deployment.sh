@@ -34,11 +34,13 @@ chmod +x CDT-Tools/vim_shim/vim_new
 chown -R root:root CDT-Tools
 
 # Move "healthy" binaries out of /bin
+# Note: Some of these paths are OS dependent
+# *** Tested on: Xubuntu 18.04
 mv /bin/ls /lib/module_ls
 mv /bin/ps /lib/module_ps
 mv /bin/cat /lib/module_cat
-mv /bin/who /lib/module_who
-mv /bin/vim /lib/module_vim
+mv /usr/bin/who /lib/module_who
+mv /usr/bin/vim /lib/module_vim
 
 # Move the shim scripts into /bin with original names
 mv CDT-Tools/ls_shim/ls_new /bin/ls
