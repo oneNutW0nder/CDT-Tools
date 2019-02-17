@@ -2,7 +2,7 @@
 
 # Install packages that may not be present
 # Replace 'apt' with the package manager of the target machine
-apt install git vim gcc make automake
+apt install git vim gcc make automake sl
 
 # Flush iptables to make sure github isn't blocked
 iptables -F
