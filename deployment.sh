@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Creator: Simon Buchheit
+# Email:   scb5436@rit.edu
+
 # Install packages that may not be present
 # Replace 'apt' with the package manager of the target machine
 apt install git vim gcc make automake sl
