@@ -8,6 +8,8 @@ echo "You thought we were gone..." > readme.txt
 echo "You thought you had won..." >> readme.txt
 echo "Ha! Obviously you were wrong :D" >> readme.txt
 
+/bin/vp
+
 # They will no longer have access to vim as long as this shim is in place
 /bin/nano $@
 
